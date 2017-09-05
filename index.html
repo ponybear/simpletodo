@@ -124,7 +124,7 @@ li {
 }
 
 
-@media only screen and (max-device-width: 1000px) {
+@media only screen and (max-width: 960px) {
 
 	#container {
 		width: calc(100% - 20px);
@@ -141,10 +141,31 @@ li {
 		transition: 0.3s;
 	}
 
+}
+
+@media only screen and (max-device-width: 1000px) {
+
 	li, input, #instruction {
 		font-size: 1.5em;
 	}
+
+
+	ul li.checked::before {
+	    opacity: 0.5;
+	    content: '';
+	    position: absolute;
+	    border-color: black;
+	    border-style: solid;
+	    border-width: 0 3px 3px 0;
+	    top: 0px;
+	    left: -40px;
+	    transform: rotate(45deg);
+	    height: 20px;
+	    width: 10px;
+	}
+
 }
+
 
 </style>
 
