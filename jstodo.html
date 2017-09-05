@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<meta content="text/html" charset="UTF-8">
+
+<html>
+<head>
+	<title>TODO</title>
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+
+<script type="text/javascript">
+
+
+function toll(feld) {	
+	
+	if (feld.value == "") {
+		/*alert ("Ist Test!")*/
+		document.getElementById("instruction").style.display = "none";		
+		/*document.getElementById("instruction").innerHtml = "Haha";*/
+	} else {
+		document.getElementById("question").style.display = "none";
+		document.getElementById("instruction").style.display = "table";
+		
+	}
+}
+
+function newtodo(val) {
+
+	var li = document.createElement("li");
+	var t = document.createTextNode(val);
+  	li.appendChild(t);
+	document.getElementById("yesul").appendChild(li);
+	document.getElementById("input").value = "";
+	document.getElementById("instruction").style.display = "none";
+	document.getElementById("instruction").style.height = "0px";
+	document.getElementById("question").style.visibility = "hidden";
+	li.addEventListener('click', function (test){this.classList.toggle('checked')});
+}
+
+
+</script>
+
+
+
+<style>
+
+
+
+/* When clicked on, add a background color and strike out text */
+ul li.checked {
+    text-decoration: line-through;
+    /*display: none;*/
+    list-style: none;
+    color: grey;
+}
+
+ul li:hover {
+	opacity: 0.3;
+}
+
+/* Add a "checked" mark when clicked on */
+ul li.checked::before {
+    opacity: 0.5;
+    content: '';
+    position: absolute;
+    border-color: black;
+    border-style: solid;
+    border-width: 0 4px 4px 0;
+    top: 0px;
+    left: -40px;
+    transform: rotate(45deg);
+    height: 30px;
+    width: 15px;
+}
+
+
+#container {
+	width: 800px;
+	margin: 0px auto;	
+}
+
+input {
+	width: 100%;
+	font-size: 3em;
+	line-break: auto;
+	text-transform: uppercase;
+	margin-top: 150px;
+	/*padding: 0px 10px;*/	
+	border: none;
+	border-bottom: 2px solid grey;
+	/*font-family: 'Inconsolata', monospace;*/
+}
+
+input::placeholder {
+	font-style: italic;
+	text-align: center;
+	/*font-weight: bold;*/
+	/*font-family: "Garamond"*/
+}
+
+#question {
+	font-family: sans-serif;
+	font-size: 3em;
+	text-align: center;
+	margin: 50px auto;
+	left: 0;
+	right: 0;
+	position: absolute
+	}
+
+#instruction {
+	font-size: 3em;
+	text-align: center;
+	margin: 0 auto;
+	display: none;
+	/*color: grey;*/
+}
+
+li {
+	list-style-type:square;
+	font-family: sans-serif;
+	text-transform: uppercase;
+	/*font-family: 'Inconsolata', monospace;*/
+	font-size: 3em;
+	margin-left: 0.5em;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+@media (max-width: 850px) {
+
+	#container {
+		width: calc(100% - 20px);
+		/*margin-top: 20px;*/
+	}
+
+	#question {
+		display: none;
+		margin: 0 auto;
+	}
+
+	input {
+		margin-top: 0px;
+		transition: 0.3s;
+	}
+}
+
+</style>
+
+</head>
+<body>
+
+<div id="container">
+
+<div id="question">THE FUCK YOU HAVE TO DO?</div>
+
+	<input id="input" type="text" placeholder="PUT YOUR FUCKING TODOS IN HERE" oninput="toll(this);" onkeypress="if (event.keyCode == 13) {newtodo(this.value)};">
+<!--if (event.keyCode == 13)*/-->
+	<div id="instruction">+<br>↩</div>
+
+	<ul id="yesul">
+	</ul>
+
+</div>
+
+
+</body>
+</html>
