@@ -5,10 +5,10 @@
 <head>
 	<title>TODO</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 
 <script type="text/javascript">
-
 
 function toll(feld) {	
 	
@@ -36,14 +36,10 @@ function newtodo(val) {
 	li.addEventListener('click', function (test){this.classList.toggle('checked')});
 }
 
-
 </script>
 
 
-
 <style>
-
-
 
 /* When clicked on, add a background color and strike out text */
 ul li.checked {
@@ -80,7 +76,7 @@ ul li.checked::before {
 
 input {
 	width: 100%;
-	font-size: 3em;
+	font-size: 3rem;
 	line-break: auto;
 	text-transform: uppercase;
 	margin-top: 150px;
@@ -100,7 +96,7 @@ input::placeholder {
 
 #question {
 	font-family: sans-serif;
-	font-size: 3em;
+	font-size: 3rem;
 	text-align: center;
 	margin: 50px auto;
 	left: 0;
@@ -109,7 +105,7 @@ input::placeholder {
 	}
 
 #instruction {
-	font-size: 3em;
+	font-size: 3rem;
 	text-align: center;
 	margin: 0 auto;
 	display: none;
@@ -121,13 +117,13 @@ li {
 	font-family: sans-serif;
 	text-transform: uppercase;
 	/*font-family: 'Inconsolata', monospace;*/
-	font-size: 3em;
+	font-size: 3rem;
 	margin-left: 0.5em;
 	margin-bottom: 10px;
 	position: relative;
 }
 
-@media (max-width: 1200px) {
+@media only screen and (max-width: 960px) {
 
 	#container {
 		width: calc(100% - 20px);
