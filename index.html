@@ -24,7 +24,6 @@ function toll(feld) {
 }
 
 function newtodo(val) {
-
 	var li = document.createElement("li");
 	var t = document.createTextNode(val);
   	li.appendChild(t);
@@ -34,6 +33,16 @@ function newtodo(val) {
 	document.getElementById("instruction").style.height = "0px";
 	document.getElementById("question").style.visibility = "hidden";
 	li.addEventListener('click', function (test){this.classList.toggle('checked')});
+}
+
+function toggleLightbox(){
+	if (document.getElementById("lightbox").style.display === "none") {
+		document.getElementById("lightbox").style.display = "inline";
+		document.getElementById("container").style.opacity = "0.3";
+	} else {
+		document.getElementById("lightbox").style.display = "none";
+		document.getElementById("container").style.opacity = "1";
+	}
 }
 
 </script>
@@ -123,6 +132,34 @@ li {
 	position: relative;
 }
 
+#wtf {
+	position: absolute;
+	font-family: sans-serif;
+	right: 10px;
+	bottom: 10px;
+}
+
+#wtf:hover {
+	color: pink;
+}
+
+#lightbox {
+	position: fixed;
+	font-family: sans-serif;
+	font-size: 2em;
+	top: calc(50% - 200px);
+	left: calc(50% - 200px);
+	width: 380px;
+	height: 380px;
+	text-align: center;
+	background-color: #EEEEEE;
+	padding: 20px 20px;
+	z-index: 2;
+}
+
+#lightbox:hover {
+	opacity: 0.5;
+}
 
 @media only screen and (max-width: 960px) {
 
@@ -172,6 +209,8 @@ li {
 </head>
 <body>
 
+<div id="lightbox" onclick="toggleLightbox()" style="display: none;">So, this is: <strong>SimpleTodo</strong>.<br><br>It is the most simple, straight-forward todo-list.<br><br>Seriously, it doesn't even save your entries, it is only good for the moment.<br><br>That's it.</div>
+
 <div id="container">
 
 <div id="question">THE FUCK YOU HAVE TO DO?</div>
@@ -183,7 +222,13 @@ li {
 	<ul id="yesul">
 	</ul>
 
+	<div>
+
+	<div id="wtf" onclick="toggleLightbox()">THE FUCK IS THIS?</div>
+
 </div>
+	
+
 
 
 </body>
